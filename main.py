@@ -1,9 +1,8 @@
 import salsa20
+import sha3_256
 
 if __name__ == "__main__":
-    message = input("Put in message here: ")
-    key = salsa20.gen_key()
-    encrypted_message = salsa20.encrypt_plaintext(message, key)
-    print(encrypted_message)
-    decrypted_message = salsa20.decrypt_message(encrypted_message, key)
-    print(decrypted_message)
+    message = "testing please work"
+    hash_1 = sha3_256.hash_message(message)
+    hash_2 = sha3_256.hash_message(message)
+    hash_3 = sha3_256.hash_message("texting please work") 
